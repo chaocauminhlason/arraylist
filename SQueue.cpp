@@ -5,9 +5,11 @@ template <class T>
 class queue{
 protected:
 public:
-int getSize
+int getSize() const{
+	return siz;
+
 bool isEmpty() const{
-    return siz;
+    return siz==0;
 }
 void enqueue(){
     if(isEmpty()) throw "Queue is Empty"
@@ -38,21 +40,21 @@ void clear(){
         dequeue();
 }
 // hàm sắp xếp nổi bọt (bubble sort)
-void BubbleSort(int a[], int n){
-    int t; // biến tạm t
-    for (int i = 0; i < n; i++){
-	for (int j = i + 1; j < n; j++){
-		if (a[j] > a[j+1]){
-                    t = a[j];
-                    a[j] = a[j+1];
-                    a[j+1] = temp;
-			}
-		}
-	}
-}
+
 void selectionSort(int a[],int n)
 {
-    int i, j, min_idx;
-    for(int i=0;)
+    for ( int start = 0; start< n-1 ; start++){
+		int minIndex = start;
+		for (int i = start+1; i< n; i++){
+			if((a[i]< a[minIndex] &&
+				(a[i]% 2==a[minIndex]%2 ||
+				(a[minIndex]%2 && a[i]%2==0)
+				){
+					minIndex = i;
+				}
+		}
+		swap(a[start],a[minIndex]);
+	}
 } 
+
 };
