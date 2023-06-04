@@ -7,6 +7,8 @@ using namespace std;
      Node<T> *head;
      Node<T> *tail;
      int size;
+	void merge()
+	void mergeSortRec(SListTail)<E> S, int siz){
      SListTail <E> S1 = new Node<E>();
      SListTail <E> S2 = new Node<E>();
      for(int i = 0;i< siz/2; i++){
@@ -16,13 +18,21 @@ using namespace std;
      }
       for(int i = 0;i< siz/2; i++){
          E value = S.front();
-          S1.addLast(value);
+          S2.addLast(value);
          s.removeFirst();
      }
+	merSortRec(S1, siz/2)
+	merSortRec(S2, siz/2)
+	merge(S1,S2);
+}
      void merge(SListTail<E> &A, SListTail<E> &B){
       SListTail<E> S = new Node<E>();
       while(!A.isEmpty() && !B.isEmpty()){
-         //
+         E value_A = A.front();
+		E value_B = B.front();
+   		if (value_B> value_A){
+			S.addLast(value_B);
+			B.removFirst();
       }
      }
  public:
@@ -30,10 +40,18 @@ using namespace std;
    bool isEmpty() const(
       return size==0;
    )
-   virtual ~SListTail()
+   virtual ~SListTail(){
       while (head){
-         Node<
+         Node<E> * v = head;
+		head = head-> next;
+		delete v;
       }
+}
+void print() const {
+for (Node<E> * v = head; v; v=v-> next)
+	cout << v -> element << " ";
+	cout << endl;
+}
     void addLast(T value){
          Node<T> * cur = new Node<T>(value)
          if(!head) {
