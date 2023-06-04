@@ -32,7 +32,7 @@ using namespace std;
 		E value_B = B.front();
    		if (value_B> value_A){
 			S.addLast(value_B);
-			B.removFirst();
+			B.removeFirst();
       }
      }
  public:
