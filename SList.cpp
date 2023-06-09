@@ -2,7 +2,7 @@
 #include "Node.cpp"
 using namespace std;
 
-tamplate< class T>
+template< class T>
 class SList{
 protected:
     int siz;

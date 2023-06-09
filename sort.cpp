@@ -84,7 +84,7 @@ int tongChuSo(int a)
 //     }
 //     swap(a[l],a[last]);
 //     return last;
-}
+};
 int main(){
 
     return 0;
