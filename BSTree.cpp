@@ -63,6 +63,8 @@ class BStree{
     }
 public:
     BStree(): root(0){};
+
+    
     int height() const// goi ngoai ham main
     {
         
@@ -75,6 +77,7 @@ public:
     void insert(E value){
         insertRec(value,root);
     }
+    
     // int depthRec(Node <E> *& v) const
     // {
     //     if(v->isleaf()) return 0;
