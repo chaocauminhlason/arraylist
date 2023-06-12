@@ -77,6 +77,11 @@ public:
     void insert(E value){
         insertRec(value,root);
     }
+    void removeKey(E value){
+        if (!v) return;
+        Node<E> * v = searchRec(value, root);
+        remove(v);
+    }
     
     // int depthRec(Node <E> *& v) const
     // {
