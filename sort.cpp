@@ -2,17 +2,25 @@
 using namespace std;
 
 // sắp sếp nổi bọt gaimr dần
-void bubbleSort(int a[], int n) {
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - 1 - i; j++) {
-            if (a[j] < a[j + 1]) {
-                int t = a[j];
-                a[j] = a[j + 1];
-                a[j + 1] = t;
-            }
-        }
-    }
 
+void swap(E &a, E& b){
+    a=a^b;
+    b=a^b;
+    a=a^b;
+}
+void bubbleSort(int a[],int n) {
+    bool swapped;
+    int j;
+    while(swapped)
+    swapped= false;
+    j++;
+    for(int i=0, i<n-j,i++)
+    {
+		if(a[i]>a[i+1]){
+        swap(a[i],a[i+1])
+        swapped=true;
+}
+    }
 }
 //Viết thuật toán sắp xếp chọn ưu tiên các số chẵn lên trước, lẻ phía sau
 void selectionSort(int a[], int n) {
